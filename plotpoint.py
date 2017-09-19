@@ -8,7 +8,7 @@ def comp2(n,m):
 
 def plot(points,N):
 	x = arange(1000.,N+1,400.)
-	y = comp2(x,1000)
+	y = comp2(x,2)
 
 	i=0
 	sm = 0
