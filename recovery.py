@@ -1,4 +1,4 @@
-	#!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import sys
@@ -11,7 +11,8 @@ def recovery():
 	l1 = string.split('\n')
 	l2 = []
 	h = ''
-	for x in l1:
+	m = int(l1[0])
+	for x in l1[1:]:
 		try:
 			h,t = x.split(':')
 			l = [(h,x) for x in t.split(',') if x != '']
@@ -20,6 +21,6 @@ def recovery():
 			continue
 	
 	f.close()
-	plot(l2,int(h))
+	plot(l2,int(h),m)
 
 recovery()

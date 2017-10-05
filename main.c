@@ -3,6 +3,8 @@
 #include <time.h>
 #include <unistd.h>
 
+#define TAMVET(vet) (sizeof(vet)/sizeof((vet)[0]))
+
 // Assinaturas
 void preencherVetorAleatoriamente(int *vetor, int n);
 void imprimir(int *vetor, int n);
@@ -11,6 +13,7 @@ void insertionsort(int *A, int p, int r);
 void quicksort(int *A, int p, int r, int m);
 int particionar(int *A, int p, int r);
 int particionarUsandoPivoAleatorio(int *A, int p, int r);
+void embaralhar(int *vet, int vetSize);
 
 // Contadores e semente
 unsigned long comparacoes = 0;
@@ -62,7 +65,7 @@ int main (int argc, char *argv[])
 			preencherVetorAleatoriamente(vetor, n);
 
 			// Ordena o vetor
-			quicksort(vetor, 0, n-1, 1000);
+			quicksort(vetor, 0, n-1, 20);
 			
 			// Salva a quantidade de comparacoes
 			fprintf(arq,"%ld,", comparacoes);
@@ -112,9 +115,25 @@ void permutar(int *vetor, int i, int j)
 	trocas++;
 }
 
+// Embaralha um vetor
+void embaralhar(int *vet, int vetSize)
+{
+	for (int i = 0; i < vetSize; i++)
+	{
+		int r = rand() % vetSize;
+
+		int temp = vet[i];
+		vet[i] = vet[r];
+		vet[r] = temp;
+	}
+}
+
 // Ordena um vetor de indice inicial p e final r
 void insertionsort(int *A, int p, int r)
 {
+	// Embaralha o vetor
+	embaralhar(A, TAMVET(A));
+	
 	for(int i=p+1; i<=r; i++)
 	{
 		int j = i;
