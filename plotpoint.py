@@ -6,6 +6,7 @@ def comp(n):
 def comp2(n,m):
 	return (n+1)*( 1. + (m*(m-1))/(6*(m+2)) + 2*(log(n+1) - log(m+2)))
 
+<<<<<<< HEAD
 def comp3(n):
 	return (n*(n-1))/4
 
@@ -19,6 +20,11 @@ def plot(points,N,M):
 
 	x3 = arange(1.,N+1,10.)
 	y3 = comp(x3)
+=======
+def plot(points,N):
+	x = arange(1000.,N+1,400.)
+	y = comp2(x,2)
+>>>>>>> 2ab3fdf07dbcdacfad6a84cd193d07d60356e1a7
 
 	i=0
 	sm = 0
