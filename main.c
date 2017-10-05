@@ -65,11 +65,8 @@ int main (int argc, char *argv[])
 			preencherVetorAleatoriamente(vetor, n);
 
 			// Ordena o vetor
-<<<<<<< HEAD
 			quicksort(vetor, 0, n-1, 20);
-=======
-			quicksort(vetor, 0, n-1, 2);
->>>>>>> 2ab3fdf07dbcdacfad6a84cd193d07d60356e1a7
+
 			
 			// Salva a quantidade de comparacoes
 			fprintf(arq,"%ld,", comparacoes);
